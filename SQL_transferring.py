@@ -40,12 +40,12 @@ if b2 == 'd':
     sheet_port = 'Call_Track'
 
     df = pd.read_excel(
-        r"file path leading to 'TA_sample_input'",
+        r"file path leading to 'TA_sample_input'", #Please download the TA_sample_input file and enter the path to that spreadsheet here.
         sheet_name=sheet_port,
         usecols=['Stranger_id', 'Port - shipments']
     )
 
-    df = df.dropna(how='all')  # Loại bỏ hàng hoàn toàn trống
+    df = df.dropna(how='all')  # Completely remove the blank space.
     list_ro = df.values.tolist()
     list_rows = []
 
