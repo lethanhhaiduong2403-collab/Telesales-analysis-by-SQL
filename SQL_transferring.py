@@ -6,7 +6,7 @@ import numpy as np
 sheet_lead = 'Call_Track'
 
 df = pd.read_excel(
-    r"D:\HẢI DƯƠNG\Sample_Call_Track.xlsx",
+    r"file path leading to 'TA_sample_input'", #Please download the TA_sample_input file and enter the path to that spreadsheet here.
     sheet_name=sheet_lead,
     usecols=[
         'Stranger_id', 'Commodity', 'company name', 'Address', 'contact_name',
@@ -14,7 +14,7 @@ df = pd.read_excel(
     ]
 )
 
-df = df.dropna(how='all')  # Loại bỏ hàng hoàn toàn trống
+df = df.dropna(how='all')  # Completely remove the blank space.
 print(df)
 
 list_rows = df.values.tolist()
@@ -34,14 +34,13 @@ print(jrow)
 pyperclip.copy(jrow)
 
 
-# 2. Đọc sheet chỉ định cho bảng danh sách cảng
+# 2. Read the Port - Shipment list.
 b2 = input('bấm "d" để lưu tiếp bảng list các cảng: ')
 if b2 == 'd':
-    # Thay 'Tên_Sheet_Cảng' bằng tên sheet tương ứng
     sheet_port = 'Call_Track'
 
     df = pd.read_excel(
-        r"D:\HẢI DƯƠNG\Sample_Call_Track.xlsx",
+        r"file path leading to 'TA_sample_input'",
         sheet_name=sheet_port,
         usecols=['Stranger_id', 'Port - shipments']
     )
